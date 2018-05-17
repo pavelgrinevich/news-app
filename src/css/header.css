@@ -1,0 +1,47 @@
+header {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 87px auto;
+  justify-items: center;
+  align-items: center;
+  user-select: none;
+}
+
+header .logo h1 {
+  text-transform: uppercase;
+  font: bold 38px "Arial";
+  color: rgb(103, 148, 183);
+  text-shadow: 0.5px 0.8px 1px rgb(193, 219, 255);
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: auto;
+  justify-content: center;
+
+  width: 100%;
+  height: 54px;
+  background-color: rgb(107, 154, 208);
+  border-bottom: 4px solid rgb(198, 222, 250);
+}
+
+header nav a {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font: bold 18px "Arial";
+  color: rgb(254, 254, 254);
+}
+
+header nav a:hover {
+  background-color: rgb(124, 167, 217);
+}
+
+header nav a.active {
+  background-color: rgb(124, 167, 217);
+}

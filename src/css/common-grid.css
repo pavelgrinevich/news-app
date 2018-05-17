@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 256px 28px 640px auto;
+  grid-template-rows: 145px 50px auto;
+  grid-template-areas: 
+    "header header header header header"
+    ". . . . ."
+    ". aside . main . ";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: aside;
+}
