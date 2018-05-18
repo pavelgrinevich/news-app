@@ -110,7 +110,7 @@ import { Component } from '@angular/core';
           </div>
         </form>
       </div>
-    </section>`
+    </section>`,
   })
 
-export class AsideComponent { }
+export class AsideComponent {}
