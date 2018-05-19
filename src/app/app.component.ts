@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'body',
   template:
-    `<router-outlet></router-outlet>`,
+    `<header>load...</header>
+    <router-outlet></router-outlet>`,
   styles: [` 
     :host {
       margin: 0;

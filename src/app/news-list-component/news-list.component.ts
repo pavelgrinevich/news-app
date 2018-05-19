@@ -1,12 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { NewsApiService } from './news-api.service';
-import { SourcesResponseProperties, NewsResponseProperties } from './ResponseProperties';;
+import { NewsApiService } from '../services/news-api.service';
+import { SourcesResponseProperties, NewsResponseProperties } from '../services/ResponseProperties';;
   
 @Component({
     selector: 'news-list-app',
     template:
-      `<header>load...</header>
-      <main [newsList]="newsList">load...</main>
+      `<main [newsList]="newsList">load...</main>
       <aside 
         [sourcesList]="sourcesList" 
         (searchNews)="searchNews($event)" 

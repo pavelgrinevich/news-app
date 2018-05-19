@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output,  Input } from '@angular/core';
-import { SourcesRequestProperties, NewsRequestProperties } from '../RequestParameters';
+import { SourcesRequestProperties, NewsRequestProperties } from '../../services/RequestParameters';
 
 @Component({
   selector: 'aside',
