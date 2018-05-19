@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output,  Input } from '@angular/core';
-import { SourcesRequestParameters, NewsRequestParameters } from '../RequestParameters';
+import { SourcesRequestProperties, NewsRequestProperties } from '../RequestParameters';
 
 @Component({
   selector: 'aside',
@@ -8,8 +8,8 @@ import { SourcesRequestParameters, NewsRequestParameters } from '../RequestParam
   })
 
 export class AsideComponent {
-  newsParams: NewsRequestParameters = new NewsRequestParameters('', 'any', 'any', '', '');
-  sourcesParams: SourcesRequestParameters = new SourcesRequestParameters('any', 'any', 'any');
+  newsParams: NewsRequestProperties = new NewsRequestProperties('', 'any', 'any', '', '');
+  sourcesParams: SourcesRequestProperties = new SourcesRequestProperties('any', 'any', 'any');
   
   languages: string[] = ['any', 'ar', 'de', 'en', 'es', 'fr', 'he', 'it', 'nl', 'no', 'pt', 'ru', 'se', 'ud', 'zh'];
   categories: string[] = ['any', 'business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
@@ -18,11 +18,11 @@ export class AsideComponent {
   visibility: boolean = false;
   
   @Input() sourcesList: object[];
-  @Output() searchNews = new EventEmitter<NewsRequestParameters>();
-  @Output() setNewSourcesParams = new EventEmitter<SourcesRequestParameters>();
+  @Output() searchNews = new EventEmitter<NewsRequestProperties>();
+  @Output() setNewSourcesParams = new EventEmitter<SourcesRequestProperties>();
   
   setNewParams() {
-    this.searchNews.emit(new NewsRequestParameters(
+    this.searchNews.emit(new NewsRequestProperties(
       this.newsParams.q, 
       this.newsParams.sources, 
       this.newsParams.language, 
@@ -32,7 +32,7 @@ export class AsideComponent {
   }
 
   showSources() {
-    this.setNewSourcesParams.emit(new SourcesRequestParameters(
+    this.setNewSourcesParams.emit(new SourcesRequestProperties(
       this.sourcesParams.category, 
       this.sourcesParams.language, 
       this.sourcesParams.country,

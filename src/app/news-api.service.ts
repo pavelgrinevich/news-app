@@ -1,5 +1,5 @@
 const NewsAPI = require('newsapi');
-import { SourcesRequestParameters, NewsRequestParameters } from './RequestParameters';
+import { SourcesRequestProperties, NewsRequestProperties } from './RequestParameters';
 import { Injectable } from '@angular/core';
 
 const newsapi = new NewsAPI('f4275402660946fa87fa39864876df8f');
@@ -9,18 +9,18 @@ const newsapi = new NewsAPI('f4275402660946fa87fa39864876df8f');
 })
 
 export class NewsApiService {
-  private newsRequestParameters: NewsRequestParameters;
-  private sourcesRequestParameters: SourcesRequestParameters;
+  private newsRequestProperties: NewsRequestProperties;
+  private sourcesRequestProperties: SourcesRequestProperties;
 
   constructor() {
-    this.newsRequestParameters = new NewsRequestParameters('', 'any', '', '', '');
-    this.sourcesRequestParameters = new SourcesRequestParameters('', '', '');
+    this.newsRequestProperties = new NewsRequestProperties('', 'any', '', '', '');
+    this.sourcesRequestProperties = new SourcesRequestProperties('', '', '');
   }
 
-  setNewsRequestParameters(param: NewsRequestParameters) {
+  setNewsRequestParameters(param: NewsRequestProperties) {
     if (param.language === 'any') param.language = '';
 
-    this.newsRequestParameters = new NewsRequestParameters(
+    this.newsRequestProperties = new NewsRequestProperties(
       param.q,
       param.sources,
       param.language,
@@ -29,12 +29,12 @@ export class NewsApiService {
     );
   }
 
-  setSourcesRequestParameters(param: SourcesRequestParameters) {
+  setSourcesRequestParameters(param: SourcesRequestProperties) {
     for (let key in param) {
       if (param[key] === 'any') param[key] = '';
     }
 
-    this.sourcesRequestParameters = new SourcesRequestParameters(
+    this.sourcesRequestProperties = new SourcesRequestProperties(
       param.category,
       param.language,
       param.country,
@@ -42,10 +42,10 @@ export class NewsApiService {
   }
 
   getNews() {
-    return newsapi.v2.everything(this.newsRequestParameters);
+    return newsapi.v2.everything(this.newsRequestProperties);
   }
 
   getSources() {
-    return newsapi.v2.sources(this.sourcesRequestParameters);
+    return newsapi.v2.sources(this.sourcesRequestProperties);
   }
 }

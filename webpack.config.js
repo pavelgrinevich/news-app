@@ -16,6 +16,9 @@ module.exports = {
     path: path.join(__dirname, './public'),
     filename: './js/[name].js',
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core/,

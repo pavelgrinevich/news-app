@@ -1,4 +1,4 @@
-export class SourcesRequestParameters {
+export class SourcesRequestProperties {
   constructor(
     public category: string,
     public language: string,
@@ -6,7 +6,7 @@ export class SourcesRequestParameters {
   ) {}
 }
 
-export class NewsRequestParameters {
+export class NewsRequestProperties {
   constructor(
     public q: string,
     public sources: string,
