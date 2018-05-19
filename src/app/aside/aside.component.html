@@ -1,0 +1,77 @@
+<section>
+  <h3>set filter</h3>
+  <div class="filter">
+    <div>
+      <label for="q">Keywords or phrases to search for:</label>
+    </div>
+    <div>
+      <input id="q" type="text" name="q" [(ngModel)]="newsParams.q">
+    </div>
+    <div>Sources:</div>
+    <div 
+      class="sources" 
+      (click)="toggle()" 
+      *ngIf="this.newsParams.sources !== 'any' && this.newsParams.sources !== ''"
+    >{{this.newsParams.sources}}</div>
+    <div 
+      class="sources" (click)="toggle()" 
+      *ngIf="this.newsParams.sources === 'any' || this.newsParams.sources === ''"
+    >choose sources</div>
+    <div class="sources-window" [style.display]="visibility?'block':'none'">
+      <label for="category">Сategory:</label>
+      <select [(ngModel)]="sourcesParams.category">    
+        <option  *ngFor="let item of categories" [value]="item">
+          {{item}}
+        </option>
+      </select>
+      <label>Language:</label>
+      <select [(ngModel)]="sourcesParams.language">    
+        <option  *ngFor="let item of languages" [value]="item">
+          {{item}}
+        </option>
+      </select>
+      <label>Country:</label>
+      <select [(ngModel)]="sourcesParams.country">    
+        <option  *ngFor="let item of countries" [value]="item">
+          {{item}}
+        </option>
+      </select>
+      <input type="submit" value="show" (click)="showSources()">
+      <h4>Sources:</h4>
+      <div class="sources-list">
+        <div *ngFor="let item of sourcesList">
+          <input [id]="item.id" type="checkbox" [value]="item.id" [(ngModel)]="item.checked">
+          <label [for]="item.id">{{item.name}}</label>
+          <p>{{item.description}}</p>
+        </div>
+      </div>
+      <input type="submit" value="apply" (click)="setSourcesList()">
+      <input type="submit" value="cancel" (click)="toggle()">
+    </div>
+    <div>
+      <label>Language:</label>
+    </div>
+    <div> 
+      <select [(ngModel)]="newsParams.language">    
+        <option  *ngFor="let item of languages" [value]="item">
+          {{item}}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="from">From:</label>
+    </div>
+    <div>
+      <input id="from" type="date" name="from" [(ngModel)]="newsParams.from">
+    </div>
+    <div>
+      <label for="to">To:</label>
+    </div>
+    <div>
+      <input id="to" type="date" name="to" [(ngModel)]="newsParams.to">
+    </div>
+    <div>
+      <input type="submit" value="search" (click)="setNewParams()">
+    </div>
+  </div>
+</section>

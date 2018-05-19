@@ -11,6 +11,7 @@ import { SourcesResponseProperties, NewsResponseProperties } from './ResponsePro
       [sourcesList]="sourcesList" 
       (searchNews)="searchNews($event)" 
       (setNewSourcesParams)="setNewSourcesParams($event)">load...</aside>`,
+    styleUrls: ['./app.component.css'],
     providers: [NewsApiService],
 })
 
@@ -29,6 +30,13 @@ export class AppComponent implements OnInit {
     this.heroService.getNews()
     .then((response: NewsResponseProperties) => {
       this.newsList = response.articles;
+
+      this.newsList.forEach((elem: any) => {
+        elem.visibility = false;
+        elem.toggle = () => {
+          elem.visibility = !elem.visibility;
+        }
+      });
     });
   }
 

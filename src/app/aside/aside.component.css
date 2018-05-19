@@ -1,21 +1,26 @@
-aside section h3 {
+:host * {
+  margin: 0;
+  padding: 0;
+}
+
+:host section h3 {
   border-bottom: 5px solid rgb(103, 148, 183);
   text-transform: uppercase;
   font: bold 18px "Arial";
   color: rgb(103, 148, 183);
 }
 
-aside section .filter {
+:host section .filter {
   position: relative;
   margin: 15px 0 30px 0;
   font: normal 12px Arial;
 }
 
-aside section .filter div {
+:host section .filter div {
   margin: 5px;
 }
 
-aside section input[type=submit] {
+:host section input[type=submit] {
   margin-right: 10px;
   padding: 2px 5px;
   background-color: rgb(107, 154, 208);
@@ -26,25 +31,24 @@ aside section input[type=submit] {
   outline: 0;
 }
 
-aside section .filter .sources {
+:host section .filter .sources {
   position: relative;
   width: 66%;
   height: 15px;
-  max-height: 50px;
   padding: 2px 1px;
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
   overflow: hidden;
 }
 
-aside section .filter .sources::after {
+:host section .filter .sources::after {
   position: absolute;
   top: 2px;
   right: 5px;
   content: "▶";
 }
 
-aside section .filter .sources-window {
+:host section .filter .sources-window {
   position: absolute;
   top: 25px;
   left: 180px;
@@ -55,20 +59,20 @@ aside section .filter .sources-window {
   z-index: 1;
 }
 
-aside section .filter .sources-list {
+:host section .filter .sources-list {
   border: 1px solid rgb(175, 175, 175);
   max-height: 250px;
   overflow: auto;
 }
 
-aside section .filter .sources-window h4~label {
+:host section .filter .sources-window h4~label:hover {
   cursor: pointer;
 }
 
-aside section .filter .sources-window label,
-aside section .filter .sources-window input,
-aside section .filter .sources-window select,
-aside section .filter .sources-window div,
-aside section .filter .sources-window h4 {
+:host section .filter .sources-window label,
+:host section .filter .sources-window input,
+:host section .filter .sources-window select,
+:host section .filter .sources-window div,
+:host section .filter .sources-window h4 {
   margin: 5px;
 }

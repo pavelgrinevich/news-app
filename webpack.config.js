@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmtlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -16,6 +17,11 @@ module.exports = {
     filename: './js/[name].js',
   },
   plugins: [
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core/,
+      path.resolve(__dirname, 'src'),
+      {}
+    ),
     new CleanWebpackPlugin(['public']),
     new HtmtlWebpackPlugin({
       template: './src/index.html',
@@ -33,15 +39,18 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
-          } ,
+          },
           'angular2-template-loader'
         ],
       },
       {
         test: /\.css$/,
-        use: extractCSS.extract([
-          'css-loader',
-        ]),
+        include: path.resolve(__dirname,'src/app'),
+        loader: 'raw-loader'
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
       },
     ]
    },

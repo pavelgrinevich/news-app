@@ -1,4 +1,9 @@
-header {
+:host * {
+  margin: 0;
+  padding: 0;
+}
+
+:host {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 87px auto;
@@ -7,14 +12,14 @@ header {
   user-select: none;
 }
 
-header .logo h1 {
+:host .logo h1 {
   text-transform: uppercase;
   font: bold 38px "Arial";
   color: rgb(103, 148, 183);
   text-shadow: 0.5px 0.8px 1px rgb(193, 219, 255);
 }
 
-header nav {
+:host nav {
   display: grid;
   grid-template-columns: repeat(3, 150px);
   grid-template-rows: auto;
@@ -26,7 +31,7 @@ header nav {
   border-bottom: 4px solid rgb(198, 222, 250);
 }
 
-header nav a {
+:host nav a {
   display: grid;
   justify-items: center;
   align-items: center;
@@ -38,10 +43,10 @@ header nav a {
   color: rgb(254, 254, 254);
 }
 
-header nav a:hover {
+:host nav a:hover {
   background-color: rgb(124, 167, 217);
 }
 
-header nav a.active {
+:host nav a.active {
   background-color: rgb(124, 167, 217);
 }

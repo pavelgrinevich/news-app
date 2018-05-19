@@ -1,0 +1,55 @@
+<section *ngFor="let item of newsList">
+  <div class="title-img">
+    <a href="{{item.url}}" target="_blank" *ngIf="item.urlToImage">
+      <img  src="{{item.urlToImage}}" alt="">
+    </a>
+    <p *ngIf="!item.urlToImage">no image</p>
+  </div>
+  <a class="ref-title" href="{{item.url}}" target="_blank" *ngIf="item.title">
+    <h2 *ngIf="item.title">{{item.title}}</h2>
+  </a>
+  <h2 *ngIf="!item.title">no title</h2>
+  <hr class="top-line">
+  <p class="publication-date" *ngIf="item.publishedAt">{{item.publishedAt}}</p>
+  <p class="publication-date" *ngIf="!item.publishedAt">no date</p>
+  <p class="publication-author" *ngIf="item.author">{{item.author}}</p>
+  <p class="publication-author" *ngIf="!item.author">no author</p>
+  <div class="buttons">
+    <button (click)="item.toggle()">detailed info</button>
+    <button (click)="addToReadLater(item)" *ngIf="!item.readLater">add to read later</button>
+    <button (click)="removeFromReadLater(item)" *ngIf="item.readLater">remove</button>
+  </div>
+  <div class="detailed-info" [style.display]="item.visibility?'block':'none'">
+    <ul>
+      <li *ngIf="item.author">Author: <span>{{item.author}}</span></li>
+      <li *ngIf="!item.author">Author: null</li>
+      <li *ngIf="item.description">Description: <span>{{item.description}}</span></li>
+      <li *ngIf="!item.description">Description: null</li>
+      <li *ngIf="item.publishedAt">PublishedAt: <span>{{item.publishedAt}}</span></li>
+      <li *ngIf="!item.publishedAt">PublishedAt: null</li>
+      <li *ngIf="item.title">Source:<br />
+        <ul>
+          <li *ngIf="item.source.id">Id: <span>{{item.source.id}}</span></li>
+          <li *ngIf="!item.source.id">Id: null</li>
+          <li *ngIf="item.source.name">Name: <span>{{item.source.name}}</span></li>
+          <li *ngIf="!item.source.name">Name: null</li>
+        </ul>
+      </li>
+      <li *ngIf="item.title">Title: <span>{{item.title}}</span></li>
+      <li *ngIf="!item.title">Title: null</li>
+      <li *ngIf="item.url">Url: <span>{{item.url}}</span></li>
+      <li *ngIf="!item.url">Url: null</li>
+      <li *ngIf="item.urlToImage">UrlToImage: <span>{{item.urlToImage}}</span></li>
+      <li *ngIf="!item.urlToImage">UrlToImage: null</li>
+    </ul>
+  </div>
+  <hr class="bottom-line">
+  <p *ngIf="item.description">
+    {{item.description}}<br /><a href="{{item.url}}" target="_blank">go to news...</a>
+  </p>
+  <p *ngIf="!item.description">
+    no description<br /><a href="{{item.url}}" target="_blank">go to news...</a>
+  </p>
+  <p class="source" *ngIf="item.source.name">source: {{item.source.name}}</p>
+  <p class="source" *ngIf="!item.source.name">no source</p>
+</section>
