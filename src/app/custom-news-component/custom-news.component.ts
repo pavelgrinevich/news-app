@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
   
 @Component({
     selector: 'custom-news-app',
-    template: `<h3>Custom news</h3>`
+    templateUrl: './custom-news.component.html',
+    styleUrls: ['./custom-news.component.css'],
 })
 
 export class CustomNewsComponent { }

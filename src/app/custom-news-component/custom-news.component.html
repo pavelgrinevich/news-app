@@ -1,0 +1,31 @@
+<div>
+  <section class="form">
+    <div>
+      <label for="title">news title:</label>
+    </div>
+    <div>
+      <input id="title" type="text" name="title" required [(ngModel)]="customNews.title">
+    </div>
+    <div>
+      <label for="description">news description:</label>
+    </div>
+    <div>
+      <textarea 
+        id="description" 
+        name="description"
+        title="Enter your news here"
+        required
+        [(ngModel)]="ustomNews.description"></textarea>
+    </div>
+    <div>
+      <button (click)="item.toggle()">publish</button>
+    </div>
+  </section>
+  <section class="list">
+      <h2>Save on Levoit Kana Himalayan Salt Lamps</h2>
+      <p>Sonntag ab 19:30 Uhr: Hartglas Samsung Galaxy J5 2107 gehärtet 9H 0.33 mm gebogen ultraclaro Premium blasenfreie Displayschutzfolie Galaxy J5 Hartglas Samsung J5 Hochwertige kratzfeste (regulärer Amazon Preis: 9,90 Euro) - Erinnerung für dieses Angebot setzen.</p>
+      <button (click)="removeFromReadLater(item)">remove</button>
+  </section>
+</div>
+
+

@@ -1,0 +1,76 @@
+:host * {
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: grid;
+  grid-template-columns: auto 640px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: 
+    ". . ."
+    ". wrapper .";
+}
+
+:host > div {
+  grid-area: wrapper;
+}
+
+.form {
+  padding: 5px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
+}
+
+.form div {
+  margin: 5px;
+}
+
+textarea {
+  width: 620px;
+  height: 50px;
+}
+
+button {
+  margin: 5px;
+  padding: 5px;
+  width: 100px;
+  background-color: rgb(107, 154, 208);
+  font: bold 14px "Arial";
+  text-transform: uppercase;
+  color: rgb(254, 254, 254);
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+:host .list {
+  display: grid;
+  grid-template-columns: auto 120px;
+  grid-template-rows: 20px auto auto auto;
+  grid-template-areas: 
+    ". ."
+    "title title"
+    " description description"
+    ". button";
+
+  font: normal 12px Arial;
+  color: rgb(105, 116, 124);
+}
+
+:host .list h2 {
+  grid-area: title;
+  color: rgb(105, 116, 124);
+  font: bold 20px "Arial";
+}
+
+:host .list p {
+  grid-area: description;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+:host .list button {
+  grid-area: button;
+}

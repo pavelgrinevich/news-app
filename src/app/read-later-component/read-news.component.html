@@ -1,7 +1,5 @@
-<div class="empty">
-  <h2 *ngIf="readLaterNews.length === 0">empty</h2>
-</div>
 <div>
+  <h2 class="empty" *ngIf="readLaterNews.length === 0">empty</h2>
   <section *ngFor="let item of readLaterNews">
     <div class="title-img">
       <a href="{{item.url}}" target="_blank" *ngIf="item.urlToImage">

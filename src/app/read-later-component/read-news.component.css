@@ -9,11 +9,11 @@
   grid-template-rows: 50px auto;
   grid-template-areas: 
     ". . ."
-    ". block .";
+    ". wrapper .";
 }
 
 :host > div {
-  grid-area: block;
+  grid-area: wrapper;
 }
 
 :host section {
@@ -35,7 +35,7 @@
   color: rgb(105, 116, 124);
 }
 
-:host div.empty h2 {
+:host .empty h2 {
   text-align: center;
   text-transform: uppercase;
 }
