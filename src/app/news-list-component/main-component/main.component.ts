@@ -11,10 +11,21 @@ export class MainComponent {
 
   addToReadLater(item: any) {
     item.readLater = true;
-    console.log(item);
+    item.visibility = false;
+    const news = JSON.stringify(item);
+
+    let readLater = JSON.parse(window.localStorage.getItem('readLater'));
+    if (!readLater) readLater = {};
+    readLater[news] = news;
+    window.localStorage.setItem('readLater', JSON.stringify(readLater));
   }
 
   removeFromReadLater(item: any) {
+    const news = JSON.stringify(item);
+
+    const readLater = JSON.parse(window.localStorage.getItem('readLater'));
+    delete readLater[news];
+    window.localStorage.setItem('readLater', JSON.stringify(readLater));
     item.readLater = false;
   }
 }

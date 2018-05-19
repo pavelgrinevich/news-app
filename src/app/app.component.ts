@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
       margin: 0;
       padding: 0;
     }
-  `]
+  `],
 })
 
 export class AppComponent {}

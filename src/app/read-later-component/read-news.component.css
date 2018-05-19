@@ -1,0 +1,151 @@
+:host * {
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: grid;
+  grid-template-columns: auto 640px auto;
+  grid-template-rows: 50px auto;
+  grid-template-areas: 
+    ". . ."
+    ". block .";
+}
+
+:host > div {
+  grid-area: block;
+}
+
+:host section {
+  display: grid;
+  grid-template-columns: 150px 150px auto;
+  grid-template-rows: auto auto auto 38px auto 16px auto auto 56px;
+  grid-template-areas: 
+    "title-img title-img title-img"
+    "title title title"
+    "top-line top-line top-line"
+    "publication-date publication-author later-button"
+    "bottom-line bottom-line bottom-line"
+    ". . ."
+    "description description description"
+    "source source source"
+    ". . .";
+
+  font: normal 12px Arial;
+  color: rgb(105, 116, 124);
+}
+
+:host div.empty h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+:host section .title-img {
+  grid-area: title-img;
+  text-align: center;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+:host section img {
+  max-width: 640px;
+}
+
+:host section .ref-title {
+  display: grid;
+  align-content: center;
+  grid-area: title;
+  text-decoration: none;
+}
+
+:host section h2 {
+  color: rgb(105, 116, 124);
+  font: bold 20px "Arial";
+}
+
+:host section p {
+  grid-area: description;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+:host section .source {
+  grid-area: source;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+:host section .top-line {
+  grid-area: top-line;
+}
+
+:host section .bottom-line {
+  grid-area: bottom-line;
+}
+
+:host section hr {
+  border: none;
+  background-color: rgb(230, 230, 230);
+  height: 1px;
+}
+
+:host section .publication-date {
+  grid-area: publication-date;
+  margin-left: 10px;
+}
+
+:host section .publication-author {
+  grid-area: publication-author;
+}
+
+:host section .publication-date,
+:host section .publication-author {
+  display: grid;
+  align-content: center;
+}
+
+:host section .buttons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto;
+  justify-content: end;
+  align-content: center;
+  grid-area: later-button;
+}
+
+:host section .buttons button {
+  margin-right: 10px;
+  padding: 5px;
+
+  background-color: rgb(107, 154, 208);
+  font: bold 14px "Arial";
+  text-transform: uppercase;
+  color: rgb(254, 254, 254);
+  outline: 0;
+}
+
+:host section .buttons button:hover {
+  cursor: pointer;
+}
+
+:host section .detailed-info {
+  position: relative;
+  width: 640px;
+  height: 230px;
+  overflow: auto;
+  padding: 5px;
+  color: rgb(193, 97, 202);
+  background-color: rgb(36, 36, 36);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
+:host section .detailed-info span {
+  color: rgb(172, 54, 51);
+}
+
+:host section .detailed-info li {
+  margin-left: 20px;
+  padding: 2px 0;
+}

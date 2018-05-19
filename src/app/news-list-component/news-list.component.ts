@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { NewsApiService } from '../services/news-api.service';
-import { SourcesResponseProperties, NewsResponseProperties } from '../services/ResponseProperties';;
+import { SourcesResponseProperties, NewsResponseProperties } from '../services/ResponseProperties';
   
 @Component({
     selector: 'news-list-app',

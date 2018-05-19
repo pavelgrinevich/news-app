@@ -1,5 +1,5 @@
 const NewsAPI = require('newsapi');
-import { SourcesRequestProperties, NewsRequestProperties } from './RequestParameters';
+import { SourcesRequestProperties, NewsRequestProperties } from './RequestProperties';
 import { Injectable } from '@angular/core';
 
 const newsapi = new NewsAPI('f4275402660946fa87fa39864876df8f');
