@@ -22,25 +22,29 @@ aside section input[type=submit] {
   font: bold 12px "Arial";
   text-transform: uppercase;
   color: rgb(254, 254, 254);
+  cursor: pointer;
   outline: 0;
 }
 
 aside section .filter .sources {
   position: relative;
   width: 66%;
+  height: 15px;
+  max-height: 50px;
   padding: 2px 1px;
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
+  overflow: hidden;
 }
 
 aside section .filter .sources::after {
   position: absolute;
+  top: 2px;
   right: 5px;
   content: "▶";
 }
 
 aside section .filter .sources-window {
-  display: none;
   position: absolute;
   top: 25px;
   left: 180px;
@@ -51,7 +55,13 @@ aside section .filter .sources-window {
   z-index: 1;
 }
 
-aside section .filter .sources-window label {
+aside section .filter .sources-list {
+  border: 1px solid rgb(175, 175, 175);
+  max-height: 250px;
+  overflow: auto;
+}
+
+aside section .filter .sources-window h4~label {
   cursor: pointer;
 }
 

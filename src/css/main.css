@@ -28,10 +28,15 @@ main section img {
   max-width: 640px;
 }
 
-main section h2 {
+main section .ref-title {
   display: grid;
   align-content: center;
   grid-area: title;
+  text-decoration: none;
+}
+
+main section h2 {
+  color: rgb(105, 116, 124);
   font: bold 20px "Arial";
 }
 

@@ -18,6 +18,8 @@ export class NewsApiService {
   }
 
   setNewsRequestParameters(param: NewsRequestParameters) {
+    if (param.language === 'any') param.language = '';
+
     this.newsRequestParameters = new NewsRequestParameters(
       param.q,
       param.sources,
@@ -28,6 +30,10 @@ export class NewsApiService {
   }
 
   setSourcesRequestParameters(param: SourcesRequestParameters) {
+    for (let key in param) {
+      if (param[key] === 'any') param[key] = '';
+    }
+
     this.sourcesRequestParameters = new SourcesRequestParameters(
       param.category,
       param.language,
@@ -36,22 +42,10 @@ export class NewsApiService {
   }
 
   getNews() {
-    return new Promise ((resolve) => {
-      newsapi.v2.everything(this.newsRequestParameters)
-      .then((response: object) => resolve(response));
-    });
+    return newsapi.v2.everything(this.newsRequestParameters);
   }
 
   getSources() {
-    newsapi.v2.sources(this.sourcesRequestParameters)
-      .then((response: object) => {
-        console.log(response);
-        /*
-          {
-            status: "ok",
-            sources: [...]
-          }
-        */
-      });
+    return newsapi.v2.sources(this.sourcesRequestParameters);
   }
 }

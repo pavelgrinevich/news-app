@@ -1,8 +1,7 @@
 export class SourcesResponseProperties {
   constructor(
-    public category: string,
-    public language: string,
-    public country: string
+    public status: string,
+    public sources: object[],
   ) {}
 }
 

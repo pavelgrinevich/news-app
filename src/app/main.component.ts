@@ -6,10 +6,14 @@ import { NewsResponseProperties } from './ResponseProperties';
   template:
     `<section *ngFor="let item of newsList">
       <div class="title-img">
-        <img *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="">
-        <p *ngIf="!item.urlToImage" src="" alt="">no image</p>
+        <a href="{{item.url}}" target="_blank" *ngIf="item.urlToImage">
+          <img  src="{{item.urlToImage}}" alt="">
+        </a>
+        <p *ngIf="!item.urlToImage">no image</p>
       </div>
-      <h2 *ngIf="item.title">{{item.title}}</h2>
+      <a class="ref-title" href="{{item.url}}" target="_blank" *ngIf="item.title">
+        <h2 *ngIf="item.title">{{item.title}}</h2>
+      </a>
       <h2 *ngIf="!item.title">no title</h2>
       <hr class="top-line">
       <p class="publication-date" *ngIf="item.publishedAt">{{item.publishedAt}}</p>
@@ -21,8 +25,12 @@ import { NewsResponseProperties } from './ResponseProperties';
         <button>add to read later</button>
       </div>
       <hr class="bottom-line">
-      <p *ngIf="item.description">{{item.description}}</p>
-      <p *ngIf="!item.description">no description</p>
+      <p *ngIf="item.description">
+        {{item.description}}<br /><a href="{{item.url}}" target="_blank">go to news...</a>
+      </p>
+      <p *ngIf="!item.description">
+        no description<br /><a href="{{item.url}}" target="_blank">go to news...</a>
+      </p>
       <p class="source" *ngIf="item.source.name">source: {{item.source.name}}</p>
       <p class="source" *ngIf="!item.source.name">no source</p>
     </section>`
