@@ -11,11 +11,11 @@
     <div 
       class="sources" 
       (click)="toggle()" 
-      *ngIf="this.newsParams.sources !== 'any' && this.newsParams.sources !== ''"
+      *ngIf="newsParams.sources !== 'any' && newsParams.sources !== ''"
     >{{this.newsParams.sources}}</div>
     <div 
       class="sources" (click)="toggle()" 
-      *ngIf="this.newsParams.sources === 'any' || this.newsParams.sources === ''"
+      *ngIf="newsParams.sources === 'any' || newsParams.sources === ''"
     >choose sources</div>
     <div class="sources-window" [style.display]="visibility?'block':'none'">
       <label for="category">Сategory:</label>

@@ -35,8 +35,9 @@
   color: rgb(105, 116, 124);
 }
 
-:host .empty h2 {
+:host h2.empty {
   text-align: center;
+  color: rgb(105, 116, 124);
   text-transform: uppercase;
 }
 

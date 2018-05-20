@@ -24,7 +24,7 @@ const appRoutes: Routes =[
       FormsModule, 
       RouterModule.forRoot(appRoutes),
     ],
-  declarations: 
+  declarations:
     [ 
       AppComponent,
       HeaderComponent,
@@ -37,4 +37,4 @@ const appRoutes: Routes =[
   bootstrap: [ AppComponent ]
 })
 
-export class AppModule { }
+export class AppModule {}

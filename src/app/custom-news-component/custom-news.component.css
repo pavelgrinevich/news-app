@@ -10,6 +10,8 @@
   grid-template-areas: 
     ". . ."
     ". wrapper .";
+  font: normal 12px Arial;
+  color: rgb(105, 116, 124);
 }
 
 :host > div {
@@ -28,6 +30,7 @@
 textarea {
   width: 620px;
   height: 50px;
+  font: normal 12px Arial;
 }
 
 button {
@@ -45,6 +48,15 @@ button:hover {
   cursor: pointer;
 }
 
+textarea, input {
+  border: 1px solid rgb(170, 170, 170);
+  outline: none;
+}
+
+.required {
+  border-color: rgb(255, 0, 0);
+}
+
 :host .list {
   display: grid;
   grid-template-columns: auto 120px;
@@ -54,9 +66,6 @@ button:hover {
     "title title"
     " description description"
     ". button";
-
-  font: normal 12px Arial;
-  color: rgb(105, 116, 124);
 }
 
 :host .list h2 {
